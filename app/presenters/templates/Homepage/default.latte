@@ -1,0 +1,9 @@
+{block content}
+	<div n:if="$user->loggedId">
+		Uživatel: {$presenter->connection->query("SELECT * FROM users WHERE id='".$user->id."'")->fetch()->username}
+	</div>
+
+<ul>
+	<li n:if="$user->loggedId == false"><a href="{plink login}">Login</a></li>
+	<li n:if="$user->loggedId == true"><a href="{plink logout!}">Log out</a></li>
+</ul>.gitignore
